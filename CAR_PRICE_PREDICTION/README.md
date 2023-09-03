@@ -1,11 +1,13 @@
 # CAR PRICE PREDICTION SYSTEM
 
-- This system consist of
+This system consist of
   
-  Data folder
+  - Data folder
   
-  Model folder
+  - Model folder
   
-  app folder
+  - app folder
   
-  Jupyter notebook file
+  - Jupyter notebook file
+
+  - README.md
