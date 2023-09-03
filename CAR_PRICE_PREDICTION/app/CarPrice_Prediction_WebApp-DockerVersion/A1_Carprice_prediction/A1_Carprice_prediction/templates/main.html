@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MAIN{% endblock %}</title>
+    
+
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        table, th, td {
+          /* border: 1px solid black; */
+          border: none;
+        }
+        /* CSS styles for submit button */
+        #submit-button {
+            display: inline-block;
+            background-color: #4285f4;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        /* To center the Tableau dashboard in the middle of the screen */
+        #tableau-viz {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    {% block style %} {% endblock %}
+
+    <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/axios.min.js' %}"></script>
+    
+    {% block script %} {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <h3 style="color: rgb(0, 128, 255); text-align:center;">CAR PRICE PREDICTION SYSTEM</h3>
+    </nav>
+    {% block body %}
+    {% endblock %}
+    <footer style="margin: 30px 20px; text-align:center">
+        &copy; {% now 'Y' %} CAR PRICE PREDICTION SYSTEM - All right reserved
+        <br>
+        Made by Nirut Gammayeengoen, st123472
+    </footer>
+</body>
+
+</html>

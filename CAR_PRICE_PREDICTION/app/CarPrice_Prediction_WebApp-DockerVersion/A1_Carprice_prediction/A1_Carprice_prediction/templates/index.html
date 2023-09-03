@@ -1,0 +1,113 @@
+{% extends 'main.html' %}
+
+{% block title %}
+INDEX
+{% endblock %}
+
+{% block body %}
+<p></p>
+<h3 style="background-color: white; color: rgb(255, 123, 0); text-align:left;">Please fill the inputs then click the <strong style="background-color: white; color: rgb(0, 153, 255); text-align:left;">SUBMIT</strong> buttton.</h3>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <form method="POST" onsubmit="return validateForm()">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td>{{ input_form.input_year.label }}</td>
+                        <td>{{ input_form.input_year }}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr><td></td><td></td><td></td></tr> <tr><td></td><td></td><td></td></tr>
+                    <tr>
+                        <td>{{ input_form.input_max_power.label }}</td>
+                        <td>{{ input_form.input_max_power }}</td>
+                        <td colspan="3"><span id="maxPowerError" style="color: red;"></span></td>
+                        <td>bhp</td>
+                    </tr>
+                    <tr><td></td><td></td><td></td></tr> <tr><td></td><td></td><td></td></tr>
+                    <tr>
+                        <td>{{ input_form.input_km_driven.label }}</td>
+                        <td>{{ input_form.input_km_driven }}</td>
+                        <td colspan="3"><span id="kmDrivenError" style="color: red;"></span></td>
+                        <td>km</td>
+                    </tr>                        
+                    <caption style="caption-side:bottom">
+                        <div>
+                            <button id="submit-button" type="submit"> SUBMIT </button>
+                        </div>
+                    </caption>
+                </table>
+            </form>
+            {% if selling_price != 'Not show' %}
+            <div id="selling-price-section">
+                <h2>SELLING PRICE: <strong style="background-color: white; color: rgb(3, 139, 49); text-align:left;">{{ selling_price }} </strong></h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    var maxPowerField = document.getElementById('id_input_max_power');
+    var kmDrivenField = document.getElementById('id_input_km_driven');   
+    var maxPowerError = document.getElementById('maxPowerError') 
+    var kmDrivenError = document.getElementById('kmDrivenError');
+
+    var sellingPriceSection = document.querySelector('#selling-price-section');
+
+    var submitButton = document.getElementById('submit-button');
+
+    maxPowerField.addEventListener('input', function () {
+        var maxPowerValue = parseFloat(maxPowerField.value);
+
+        if (isNaN(maxPowerValue) || maxPowerValue < 0 || maxPowerValue > 4) {
+            maxPowerError.textContent = 'Please enter MAX POWER between 0 to 4 ';
+            sellingPriceSection.style.display = 'none'; // Hide selling price section
+            submitButton.disabled = true;
+        }
+        else {
+            maxPowerError.textContent = '';
+            submitButton.disabled = false;
+        }
+    });
+
+    kmDrivenField.addEventListener('input', function () {
+        var kmDrivenValue = parseFloat(kmDrivenField.value);
+
+        if (isNaN(kmDrivenValue) || kmDrivenValue < 0 || kmDrivenValue > 1000) {
+            kmDrivenError.textContent = 'Please enter KM DRIVEN between 0 to 1000 ';
+            sellingPriceSection.style.display = 'none'; // Hide selling price section
+            submitButton.disabled = true;
+        }
+        else {
+            kmDrivenError.textContent = '';
+            submitButton.disabled = false;
+        }
+    });
+
+    function validateForm() {
+        var maxPowerValue = parseFloat(maxPowerField.value);
+        var kmDrivenValue = parseFloat(kmDrivenField.value);
+
+        if (isNaN(maxPowerValue) || maxPowerValue < 0 || maxPowerValue > 4) {
+            maxPowerError.textContent = 'Please enter MAX POWER between 0 to 4 ';
+            sellingPriceSection.style.display = 'none'; // Hide selling price section
+            return false
+        }
+
+        else if (isNaN(kmDrivenValue) || kmDrivenValue < 0 || kmDrivenValue > 1000) {
+            kmDrivenError.textContent = 'Please enter KM DRIVEN between 0 to 1000 ';
+            sellingPriceSection.style.display = 'none'; // Hide selling price section
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+</script>
+
+{% endblock %}

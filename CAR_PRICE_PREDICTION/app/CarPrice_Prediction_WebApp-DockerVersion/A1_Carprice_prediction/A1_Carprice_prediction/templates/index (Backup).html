@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+{% block title %}
+INDEX
+{% endblock %}
+
+{% block body %}
+<p></p>
+<h3 style="background-color: white; color: rgb(255, 123, 0); text-align:left;">Please fill the inputs then click the <strong style="background-color: white; color: rgb(0, 153, 255); text-align:left;">SUBMIT</strong> buttton.</h3>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td>{{ input_form.input_year.label }}</td>
+                        <td>{{ input_form.input_year }}</td>
+                        <td></td>
+                    </tr>
+                    <tr><td></td><td></td><td></td></tr> <tr><td></td><td></td><td></td></tr>
+                    <tr>
+                        <td>{{ input_form.input_max_power.label }}</td>
+                        <td>{{ input_form.input_max_power }}</td>
+                        <td>bhp</td>
+                    </tr>
+                    <tr><td></td><td></td><td></td></tr> <tr><td></td><td></td><td></td></tr>
+                    <tr>
+                        <td>{{ input_form.input_km_driven.label }}</td>
+                        <td>{{ input_form.input_km_driven }}</td>
+                        <td>km</td>
+                    </tr>                        
+                    <caption style="caption-side:bottom">
+                        <div>
+                            <button id="submit-button" type="submit"> SUBMIT </button>
+                        </div>
+                    </caption>
+                </table>
+            </form>
+            {% if selling_price != 'Not show' %}
+            <div>
+                <h2>SELLING PRICE: <strong style="background-color: white; color: rgb(3, 139, 49); text-align:left;">{{ selling_price }} </strong></h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
