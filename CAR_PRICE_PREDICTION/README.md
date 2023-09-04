@@ -11,3 +11,5 @@ This system consist of
   - Jupyter notebook file
 
   - README.md
+
+![Car Price Prediction System].(app/Car Price Prediction System.png)
