@@ -12,4 +12,4 @@ This system consist of
 
   - README.md
 
-![Car Price Prediction System](app/Car Price Prediction System.png)
+![Car Price Prediction System](app/Car%20Price%20Prediction%20System.png)
