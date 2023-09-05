@@ -29,6 +29,6 @@
 
   6. Press the SUBMIT Button.
 
-  7. The model at backend will predicted and system will send data back to show SELLING PRICE at Frontend.
+  7. The frontend will send data to backend, then model at backend will predict and send the predicted data back to show SELLING PRICE at Frontend.
 
 ![Car Price Prediction System](app/Car%20Price%20Prediction%20System.png)
