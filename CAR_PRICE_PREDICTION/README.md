@@ -14,7 +14,7 @@
 
 **To run the app of CAR PRICE PREDICTION SYSTEM**
 
-  1. Go to the app directory.
+  1. Go to the app/CarPrice_Prediction_WebApp-DockerVersion/A1_Carprice_prediction/ directory.
 
   2. Build the docker image: docker-compose build
 
