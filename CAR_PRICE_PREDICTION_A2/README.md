@@ -2,4 +2,4 @@
 
 ssh to ml2023
 
-![Car Price Prediction System_A2](ssh%20to%20ml2023.png)
+![Car Price Prediction System_A2](ssh_to_ml2023.png)
