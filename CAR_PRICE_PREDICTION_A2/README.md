@@ -1,4 +1,4 @@
-## I am trying to complete soon: checkpoint, Thursday September 21, 2023.
+## I am trying to complete within Saturday September 23, 2023.
 
 ssh to ml2023
 
