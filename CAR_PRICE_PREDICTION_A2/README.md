@@ -1,4 +1,4 @@
-## I need extend the complete date to before midnight of Sunday October 1, 2023, sorry for the inconvenience.
+## I need to extend the complete date to before midnight of Sunday October 1, 2023, sorry for the inconvenience.
 
 ssh to ml2023
 
