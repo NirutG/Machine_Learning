@@ -1,4 +1,4 @@
-## I need to extend the complete date to Saturday 25 November, 2023, sorry for the inconvenience.
+## I need to extend the completed date to Saturday 25 November, 2023, sorry for inconvenience.
 
 ssh to ml2023
 
