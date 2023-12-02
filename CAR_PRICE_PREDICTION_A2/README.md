@@ -1,5 +1,2 @@
-## I need to extend the completed date to Saturday 25 November, 2023, sorry for inconvenience.
+## Please go to https://github.com/NirutG/A2-Predicting-Car-Price/tree/master
 
-ssh to ml2023
-
-![Car Price Prediction System_A2](ssh_to_ml2023.png)
